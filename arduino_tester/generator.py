@@ -8,7 +8,7 @@ def generate(build_dir):
     pin_mode_arduino2= ""
 
     for pin in range(15):
-        defines += f"#define D{pin}\n"
+        defines += f"#define D{pin} {pin}\n".format(pin)
         pin_mode_arduino1 += template.template_pinmode.format(
             pin_number = f'D{pin}',
             in_out = f'OUTPUT'
