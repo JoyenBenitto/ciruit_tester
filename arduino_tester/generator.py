@@ -33,7 +33,7 @@ def generate(build_dir):
         p = "}",
         logic = ""
     )
-
+    
     with open(f"{build_dir}/test1.c", "a") as fp:
         fp.write(frame_arduino1)
     with open(f"{build_dir}/test2.c", "a") as fp:

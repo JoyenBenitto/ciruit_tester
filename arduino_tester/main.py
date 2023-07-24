@@ -7,13 +7,6 @@ import arduino_tester.generator as generator
 import shutil
 import click
 
-build_dir = "./build"
-os.system(f"rm -r {build_dir}")
-os.system(f"mkdir {build_dir}")
-generator.generate(build_dir)
-
-# -------
-
 # Top level group
 @click.group()
 @click.version_option(version=__version__)
@@ -26,7 +19,7 @@ def cli():
     '--test_gen',
     '-t',
     help = 'This argument helps user to generate the test file',
-    required = True
+    required = False
 )
 
 @click.option(
@@ -48,3 +41,6 @@ def cli():
 @cli.command()
 def generate(test_gen ,build_dir ,show_table):
     '''Generating the .c test files'''
+    os.system(f"rm -r {build_dir}")
+    os.system(f"mkdir {build_dir}")
+    generator.generate(build_dir)
