@@ -1,5 +1,5 @@
 import os
-import template as template 
+import arduino_tester.template as template 
 
 def generate(build_dir):
 

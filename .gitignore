@@ -1,5 +1,6 @@
 __pycache__/
-/build
+arduino_tester.egg-info/
+build/
 *.pyc
 *.pyo
 *.xpr
