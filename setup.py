@@ -21,23 +21,23 @@ with open("README.md", "r") as fh:
 
 
 setup(
-    name='ALUator',
+    name='arduino_tester',
     version='0.1.0',
     description="Arduino circuit tester",
     long_description= readme + '\n\n',
     classifiers=[
-        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.8",
         "License :: MIT",
         "Development Status :: Beta"
     ],
     keywords = "ant_gen",
-    url = 'https://github.com/JoyenBenitto/ALUator',
+    url = 'https://github.com/JoyenBenitto/ciruit_tester',
     author = "Joyen Benitto",
     author_email = 'joyen.benitto12@gmail.com',
     license = "BSD 2-Clause License",
     packages = find_packages(),
     install_requires = ["requests"],
-    python_requires = ">=3.10",
+    python_requires = ">=3.8",
     entry_points={
         'console_scripts': ['arduino_tester=arduino_tester.main:cli'],
     },
