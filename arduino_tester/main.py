@@ -4,7 +4,7 @@ from arduino_tester.__init__ import __version__
 from arduino_tester.__init__ import __author__
 from arduino_tester.__init__ import __email__
 import arduino_tester.generator as generator
-import shutil
+import arduino_tester.utils as utils
 import click
 
 # Top level group
@@ -19,6 +19,7 @@ def cli():
     '--test_gen',
     '-t',
     help = 'This argument helps user to generate the test file',
+    is_flag = True,
     required = False
 )
 
@@ -41,6 +42,6 @@ def cli():
 @cli.command()
 def generate(test_gen ,build_dir ,show_table):
     '''Generating the .c test files'''
-    os.system(f"rm -r {build_dir}")
+    utils.clean_dir(build_dir)
     os.system(f"mkdir {build_dir}")
     generator.generate(build_dir)
